@@ -1,4 +1,6 @@
-#Projet de fin d'étude
+## Projet de fin d'étude
 
-## E-Commerce Symfony 
+# E-Commerce Symfony 
+# Version de dév. 
+
 
