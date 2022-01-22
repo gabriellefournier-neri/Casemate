@@ -1,0 +1,96 @@
+{% block header %}
+	{# <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			  <a class="navbar-brand" href="#">Navbar</a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+			
+			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			    <ul class="navbar-nav mr-auto">
+			      <li class="nav-item active">
+			        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link" href="#">Link</a>
+			      </li>
+			      <li class="nav-item dropdown">
+			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			          Dropdown
+			        </a>
+			        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+			          <a class="dropdown-item" href="#">Action</a>
+			          <a class="dropdown-item" href="#">Another action</a>
+			          <div class="dropdown-divider"></div>
+			          <a class="dropdown-item" href="#">Something else here</a>
+			        </div>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link disabled" href="#">Disabled</a>
+			      </li>
+			    </ul>
+			    <form class="form-inline d-flex">
+			      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+			      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			    </form>
+			  </div>
+			</nav> #}
+
+	<header>
+		{# menu client #}
+		<div id="menu-client">
+    <div class="login"><a href=""><i class="lar la-user-circle"></i>Mon compte</a></div>
+    <div class="cart"><a href=""><i class="las la-shopping-cart"></i>Panier (0)</a></div>
+    </div>
+
+
+		{# logo #}
+		<div class="logo-header">
+			<a href=""><img src="{{asset('assets/img/Logo.png')}}" alt="Casemate"></a>
+		</div>
+
+		{# menu #}
+		<nav class="navbar navbar-expand-lg header-menu">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navigation navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="#">Tous nos vinyles</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Notre séléction</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Arrivage de la semaine</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Promotions</a>
+					</li>
+					{# <li class="nav-item dropdown">
+															        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+															          Tous nos vinyles
+															        </a>
+															        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+															          <a class="dropdown-item" href="#">Acid</a>
+															          <a class="dropdown-item" href="#">Psy</a>
+															          <a class="dropdown-item" href="#">Techno</a>
+															          <a class="dropdown-item" href="#">Trance</a>
+															          <div class="dropdown-divider"></div>
+															          <a class="dropdown-item" href="#">Dub</a>
+															          <a class="dropdown-item" href="#">Bass</a>
+															          <a class="dropdown-item" href="#">Garage</a>
+															        </div>
+															      </li> #}
+				</ul>
+				{# <form class="form-inline d-flex">
+												      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+												      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+												    </form> #}
+			</div>
+		</nav>
+	</header>
+
+
+{% endblock header %}

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}On se connait ? {% endblock %}
+
+{% block stylesheets %} <link href="{{asset('assets/css/connexion.css')}}" rel="stylesheet"> {% endblock %}
+
+
+{% block body %}
+
+
+<div class="inscription">
+    <h1>Inscription</h1>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+</div>
+
+
+
+
+
+
+{% endblock %}
