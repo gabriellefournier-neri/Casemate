@@ -1,7 +1,23 @@
-
 {% extends 'base.html.twig' %}
 
 {# {% block title %}Hello HomeController!{% endblock %} ici je met rien car c'est l'accueil #}
+
+{% block stylesheets %}
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.0.0/css/font-awesome.min.css">
+	<script src="https://kit.fontawesome.com/5398383d22.js" crossorigin="anonymous"></script>
+	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
+	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" defer></script>
+	{# <script src="{{asset('js/search.js')}}"></script>
+	<link href="{{ asset('styles/index.css') }}" type="text/css" rel="stylesheet">
+	<link href="{{ asset('styles/artistcard.css') }}" type="text/css" rel="stylesheet">
+	<link href="{{ asset('styles/gotop.css') }}" type="text/css" rel="stylesheet"> #}
+{% endblock %}
+
+{# {% block javascripts %}
+	<script src="{{ asset('js/gotop.js') }}" defer></script>
+{% endblock %} #}
+
 
 
 {% block content %}
@@ -109,85 +125,256 @@
 
 
 			<!-- Marketing messaging and featurettes
-						  ================================================== -->
+									  ================================================== -->
 			<!-- Wrap the rest of the page in another container to center all the content. -->
 
-			<div
-				class="container marketing">
+			<div class="container marketing">
 
-				<!-- Three columns of text below the carousel -->
-				<div class="row">
-					<div class="col-lg-4">
-						<svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveaspectratio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140">
-							<title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-						</svg>
-						<h2>Heading</h2>
-						<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-						<p>
-							<a class="btn btn-secondary" href="#" role="button">View details &raquo;</a>
-						</p>
+				<section class="py-5">
+					<div class="container px-4 px-lg-5 mt-5">
+						<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+							<div class="col mb-5">
+								<div
+									class="card h-100">
+									<!-- Product image-->
+									<img
+									class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..."/>
+									<!-- Product details-->
+									<div class="card-body p-4">
+										<div
+											class="text-center">
+											<!-- Product name-->
+											<h5 class="fw-bolder">Fancy Product</h5>
+											<!-- Product price-->
+											$40.00 - $80.00
+										</div>
+									</div>
+									<!-- Product actions-->
+									<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+										<div class="text-center">
+											<a class="btn btn-outline-dark mt-auto" href="#">View options</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col mb-5">
+								<div
+									class="card h-100">
+									<!-- Sale badge-->
+									<div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+									<!-- Product image-->
+									<img
+									class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..."/>
+									<!-- Product details-->
+									<div class="card-body p-4">
+										<div
+											class="text-center">
+											<!-- Product name-->
+											<h5 class="fw-bolder">Special Item</h5>
+											<!-- Product reviews-->
+											<div class="d-flex justify-content-center small text-warning mb-2">
+												<div class="bi-star-fill"></div>
+												<div class="bi-star-fill"></div>
+												<div class="bi-star-fill"></div>
+												<div class="bi-star-fill"></div>
+												<div class="bi-star-fill"></div>
+											</div>
+											<!-- Product price-->
+											<span class="text-muted text-decoration-line-through">$20.00</span>
+											$18.00
+										</div>
+									</div>
+									<!-- Product actions-->
+									<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+										<div class="text-center">
+											<a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col mb-5">
+								<div
+									class="card h-100">
+									<!-- Sale badge-->
+									<div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+									<!-- Product image-->
+									<img
+									class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..."/>
+									<!-- Product details-->
+									<div class="card-body p-4">
+										<div
+											class="text-center">
+											<!-- Product name-->
+											<h5 class="fw-bolder">Sale Item</h5>
+											<!-- Product price-->
+											<span class="text-muted text-decoration-line-through">$50.00</span>
+											$25.00
+										</div>
+									</div>
+									<!-- Product actions-->
+									<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+										<div class="text-center">
+											<a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col mb-5">
+								<div
+									class="card h-100">
+									<!-- Product image-->
+									<img
+									class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..."/>
+									<!-- Product details-->
+									<div class="card-body p-4">
+										<div
+											class="text-center">
+											<!-- Product name-->
+											<h5 class="fw-bolder">Popular Item</h5>
+											<!-- Product reviews-->
+											<div class="d-flex justify-content-center small text-warning mb-2">
+												<div class="bi-star-fill"></div>
+												<div class="bi-star-fill"></div>
+												<div class="bi-star-fill"></div>
+												<div class="bi-star-fill"></div>
+												<div class="bi-star-fill"></div>
+											</div>
+											<!-- Product price-->
+											$40.00
+										</div>
+									</div>
+									<!-- Product actions-->
+									<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+										<div class="text-center">
+											<a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col mb-5">
+								<div
+									class="card h-100">
+									<!-- Sale badge-->
+									<div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+									<!-- Product image-->
+									<img
+									class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..."/>
+									<!-- Product details-->
+									<div class="card-body p-4">
+										<div
+											class="text-center">
+											<!-- Product name-->
+											<h5 class="fw-bolder">Sale Item</h5>
+											<!-- Product price-->
+											<span class="text-muted text-decoration-line-through">$50.00</span>
+											$25.00
+										</div>
+									</div>
+									<!-- Product actions-->
+									<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+										<div class="text-center">
+											<a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col mb-5">
+								<div
+									class="card h-100">
+									<!-- Product image-->
+									<img
+									class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..."/>
+									<!-- Product details-->
+									<div class="card-body p-4">
+										<div
+											class="text-center">
+											<!-- Product name-->
+											<h5 class="fw-bolder">Fancy Product</h5>
+											<!-- Product price-->
+											$120.00 - $280.00
+										</div>
+									</div>
+									<!-- Product actions-->
+									<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+										<div class="text-center">
+											<a class="btn btn-outline-dark mt-auto" href="#">View options</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col mb-5">
+								<div
+									class="card h-100">
+									<!-- Sale badge-->
+									<div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+									<!-- Product image-->
+									<img
+									class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..."/>
+									<!-- Product details-->
+									<div class="card-body p-4">
+										<div
+											class="text-center">
+											<!-- Product name-->
+											<h5 class="fw-bolder">Special Item</h5>
+											<!-- Product reviews-->
+											<div class="d-flex justify-content-center small text-warning mb-2">
+												<div class="bi-star-fill"></div>
+												<div class="bi-star-fill"></div>
+												<div class="bi-star-fill"></div>
+												<div class="bi-star-fill"></div>
+												<div class="bi-star-fill"></div>
+											</div>
+											<!-- Product price-->
+											<span class="text-muted text-decoration-line-through">$20.00</span>
+											$18.00
+										</div>
+									</div>
+									<!-- Product actions-->
+									<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+										<div class="text-center">
+											<a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col mb-5">
+								<div
+									class="card h-100">
+									<!-- Product image-->
+									<img
+									class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..."/>
+									<!-- Product details-->
+									<div class="card-body p-4">
+										<div
+											class="text-center">
+											<!-- Product name-->
+											<h5 class="fw-bolder">Popular Item</h5>
+											<!-- Product reviews-->
+											<div class="d-flex justify-content-center small text-warning mb-2">
+												<div class="bi-star-fill"></div>
+												<div class="bi-star-fill"></div>
+												<div class="bi-star-fill"></div>
+												<div class="bi-star-fill"></div>
+												<div class="bi-star-fill"></div>
+											</div>
+											<!-- Product price-->
+											$40.00
+										</div>
+									</div>
+									<!-- Product actions-->
+									<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+										<div class="text-center">
+											<a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
-					<!-- /.col-lg-4 -->
-					<div class="col-lg-4">
-						<svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveaspectratio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140">
-							<title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-						</svg>
-						<h2>Heading</h2>
-						<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-						<p>
-							<a class="btn btn-secondary" href="#" role="button">View details &raquo;</a>
-						</p>
-					</div>
-					<!-- /.col-lg-4 -->
-					<div class="col-lg-4">
-						<svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveaspectratio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140">
-							<title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-						</svg>
-						<h2>Heading</h2>
-						<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-						<p>
-							<a class="btn btn-secondary" href="#" role="button">View details &raquo;</a>
-						</p>
-					</div>
-					<!-- /.col-lg-4 -->
-				</div>
-				<!-- /.row -->
+				</section>
 
 
 				<!-- START THE FEATURETTES -->
-
-				<hr class="featurette-divider">
-
-				<div class="row featurette">
-					<div class="col-md-7">
-						<h2 class="featurette-heading">First featurette heading.
-							<span class="text-muted">It’ll blow your mind.</span>
-						</h2>
-						<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-					</div>
-					<div class="col-md-5">
-						<svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveaspectratio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500">
-							<title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
-						</svg>
-					</div>
-				</div>
-
-				<hr class="featurette-divider">
-
-				<div class="row featurette">
-					<div class="col-md-7 order-md-2">
-						<h2 class="featurette-heading">Oh yeah, it’s that good.
-							<span class="text-muted">See for yourself.</span>
-						</h2>
-						<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-					</div>
-					<div class="col-md-5 order-md-1">
-						<svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveaspectratio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500">
-							<title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
-						</svg>
-					</div>
-				</div>
-
 				<hr class="featurette-divider">
 
 				<div class="row featurette">
@@ -213,14 +400,9 @@
 			<!-- /.container -->
 
 
-			
 		</main>
-		
+
 	</body>
 
 
-
-    
 {% endblock %}
-
-

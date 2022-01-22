@@ -1,0 +1,155 @@
+:root {
+    --bleuF: #0D1925;
+    --bleuC: #667787;
+    --noir: #19100B;
+    --gris: #787A75;
+    --grisC: #D9D9D9;
+    --bg:rgba(102, 119, 135, 0.322);
+}
+
+/* FONTs DE BASE */
+body {
+    background-color: rgba(237, 236, 236, 0.349);
+}
+
+h1 {
+    font-family: europa, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--noir);
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: europa, sans-serif;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: var(--bleuF);
+}
+
+h2 span {
+    color: var(--bleuC);
+    font-weight: 400;
+}
+
+h3 {
+    font-family: proxima-nova, sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: var(--bleuF);
+}
+
+h3 span {
+    color: var(--bleuC);
+    font-weight: 500;
+}
+
+/* h4{
+    font-family: proxima-nova, sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+    color: var(--blue);
+}
+h4 span{
+    color: var(--blueGris2);
+    font-weight: 500;
+}
+h5{
+    color:var(--blue) ;
+    font-weight: 600;
+    /* text-decoration: underline;
+} */
+p {
+    font-family: open-sans, sans-serif;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    font-style: none;
+    text-transform: none;
+    color: var(--bleuF);
+    font-weight: 600;
+}
+
+a:hover {
+    color: var(--bleuC);
+}
+
+/* END FONTS SETTINGS */
+.alert {
+    margin-bottom: 0 !important;
+}
+
+
+/* HEADER ********************************************** */
+
+
+
+
+
+/* FOOTER ********************************************** */
+
+
+#footer #footer-contact{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+#footer #footer-contact #contacts, #footer #footer-contact #liens-site{
+    width: 50%;
+}
+#footer{
+    background-color: var(--bg);
+    padding-top: 45px;
+}
+
+#footer #footer-contact #contacts img{
+    max-width: 25% ;
+    margin-bottom: 10px;
+}
+
+#footer #footer-contact #contacts p{
+    font-size: 14px;
+}
+.mail-footer i{
+    font-size: 20px;
+}
+
+#footer #footer-contact .reseau-footer a i{
+    font-size: 22px;
+    margin-right: 10px;
+}
+   
+#footer #footer-contact #liens-site{
+    display: flex;
+    text-align: right;
+    flex-direction: column;
+}
+
+
+#footer .informations {
+    justify-content: center;
+}
+
+#footer .informations p a {
+    font-size: 14px;
+    font-weight: 400;
+    margin: 90px;
+}
+
+
+.copyright {
+    border-top: 1px solid var(--grisC);
+    padding-top: 15px;
+    background-color: #f8f8f8 !important;
+}
+
+.copyright p,
+.copyright a {
+    font-size: 12px;
+    margin-bottom: 0;
+}

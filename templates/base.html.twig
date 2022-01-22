@@ -2,36 +2,61 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description " content="Casemate | Shop de vinyles alternatifs de seconde main à Toulouse">
 		<title>
 			{% block title %}
 				Casemate - Vente de Vinyles de seconde main à Toulouse
 			{% endblock %}
 		</title>
+		{# APPEL BOOTSTRAP #}
+		<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+		{# ICONS LINEAWESOME #}
+		<link
+		rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+		{# ICONS GOOGLE  #}
+		<link
+		href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		{# TYPO OPEN SANS  #}
+		<link
+		rel="stylesheet" href="https://use.typekit.net/ort4rqt.css">
+		{# TYPO EUROPA #}
+		<link rel="stylesheet" href="https://use.typekit.net/uyu3jvr.css">
+		{# STYLES COMMUN #}
+		<link href="{{asset('assets/css/carousel.css')}}" rel="stylesheet">
+		<link href="{{asset('assets/css/gotop.css')}}" rel="stylesheet">
+		<link href="{{asset('assets/css/bootstrap.min.css') }}" rel="stylesheet"> 
+		<link href="{{asset('assets/css/commun.css')}}" rel="stylesheet">
+		{# STYLES PARTICULIER :  #}
+		{% block stylesheets %}{% endblock %}
+
+		{# Ici Fichier de style personalisé généralisé (button, titre, couleurs ...) pour l'accueil #}
+		{# <link href="{{ asset('asssets/css/accueil.css') }}" type="text/css" rel="stylesheet"> #}
+
 		<link
 		rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-		{% block stylesheets %}
-			<link href="{{asset ('assets/css/carousel.css')}}" rel="stylesheet">
-			<link href="{{asset ('assets/css/bootstrap.min.css') }}" rel="stylesheet">
-		{% endblock %}
+	{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 
-		{% block javascripts %}
-			<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-			<script src="{{asset ('assets/js/bootstrap.bundle.min.js')}}"></script>
-		{% endblock %}
 
 	</head>
 	<body>
-        {# HEADER #}
+	{# {% block body %} #}
+		{# HEADER avec nav #}
+			{# {% block header %}
+				{% include 'main/header.html.twig' %}
+			{% endblock header %} #}
+
+		<!-- CONTENT TEMPLATE-->{% block content %}
+		{% endblock %}
 
 
-        <!-- CONTENT TEMPLATE-->
-		{% block content %}{% endblock %}
+
+
 
 
 		<!-- FOOTER COMMUN-->
-		<footer class="container">
-			<p class="float-right">
+			{# <footer class="container"> <p class="float-right">
 				<a href="#">Back to top</a>
 			</p>
 			<p>&copy; 2017-2020 Company, Inc. &middot;
@@ -39,6 +64,27 @@
 				&middot;
 				<a href="#">Terms</a>
 			</p>
-		</footer>
+		</footer> #}
+
+
+{# FOOTER COMMUN #}
+		{% block footer %}
+			{% include 'main/footer.html.twig' %}
+		{% endblock footer %}
+
+
+
+
+
+
+
+	{# {% endblock %} #}
+
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+		<script src="{{ asset('assets/js/gotop.js') }}" defer></script>
+		<script src="{{asset ('assets/js/bootstrap.bundle.min.js')}}"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+		{% block javascripts %}{% endblock %}
 	</body>
 </html>

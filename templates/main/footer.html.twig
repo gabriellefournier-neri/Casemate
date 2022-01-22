@@ -1,0 +1,66 @@
+{% block footer%}
+
+
+<footer
+	id="footer">
+	{# <a id="gotop"></a> #}
+    {# bouton JS go to the top #}
+	<div id="gotop">
+		<div class="disc spin">
+			<div class="disc-reflection-left"></div>
+			<div class="disc-reflection-right"></div>
+			<div class="disc-groove"></div>
+		</div>
+	</div>
+    {# footer principal #}
+	<div id="footer-contact" class="container d-flex">
+		<div id="contacts">
+			<img src="{{ asset('assets/img/Logo.png')}}" alt="Logo Casemate">
+			<p>27 Avenue Honoré Serres
+				<br>
+				31000 Toulouse</p>
+            <div class="reseau-footer">
+                <a href="https://www.instagram.com/casemate.record.shop/" target="_blank" rel="noopener noreferrer"><i class="lab la-instagram"></i></a>
+                <a href="https://www.facebook.com/casemate.record.shop/" target="_blank" rel="noopener noreferrer"><i class="lab la-facebook-f"></i></a>
+                <a href="https://soundcloud.com/casemate_record_shop" target="_blank" rel="noopener noreferrer"><i class="lab la-soundcloud"></i></a>
+            </div>
+		</div>
+
+		<div id="liens-site">
+			<h3>Informations</h3>
+			<a href="mailto:contact@casemate.com"><i class="las la-envelope"></i> Contactez-nous</a>
+			<a href="#">Livraison</a>
+			<a href="#">Paiement sécurisé</a>
+			<a href="#">Retrait en magasin</a>
+			<a href="#">A propos de Casemate</a>
+		</div>
+	</div>
+
+
+	{# partie inférieure du footer #}
+	<div class="informations d-flex align-item">
+		<p>
+			<a href="#">Mentions légales</a>
+		</p>
+		<p>
+			<a href="#">CGV</a>
+		</p>
+		<p>
+			<a href="#">Politique de confidentialité</a>
+		</p>
+	</div>
+
+	{# bas de page #}
+	<div class="copyright">
+		<article class="fst-italic text-center">
+			<p>
+				Copyright @ Casemate 2022 | Made with 🖤 by
+				<a href="https://www.linkedin.com/in/gabriellefournierneri">
+					Gabrielle Fournier-Néri</a>
+			</p>
+		</article>
+	</div>
+	{# </section> #}
+
+
+</footer>{% endblock footer %}
