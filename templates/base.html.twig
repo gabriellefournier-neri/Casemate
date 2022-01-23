@@ -17,7 +17,8 @@
 		<link
 		rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 		{# FONT AWESOME #}
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.0.0/css/font-awesome.min.css">
+		<link
+		rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.0.0/css/font-awesome.min.css">
 		{# ICONS GOOGLE  #}
 		<link
 		href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -25,38 +26,84 @@
 		<link
 		rel="stylesheet" href="https://use.typekit.net/ort4rqt.css">
 		{# TYPO EUROPA #}
-		<link
-		rel="stylesheet" href="https://use.typekit.net/uyu3jvr.css">
-
-		{% block stylesheets %}{% endblock %}
+		<link rel="stylesheet" href="https://use.typekit.net/uyu3jvr.css"> {% block stylesheets %}{% endblock %}
 		<link href="{{asset('assets/css/carousel.css')}}" rel="stylesheet">
 		<link href="{{asset('assets/css/gotop.css')}}" rel="stylesheet">
 		<link href="{{asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
-		<link
-		href="{{asset('assets/css/commun.css')}}" rel="stylesheet">
-		
-		
-		
+		<link href="{{asset('assets/css/commun.css')}}" rel="stylesheet">
 
-		
 
 		{# Ici Fichier de style personalisé généralisé (button, titre, couleurs ...) pour l'accueil #}
 		{# <link href="{{ asset('asssets/css/accueil.css') }}" type="text/css" rel="stylesheet"> #}
 
-		<link
-		rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>"> </head>
 
-
-	</head>
-	
 	<body>
 
-	{# HEADER avec nav #}
+		{# HEADER avec nav #}
 		{% block header %}
 			{% include 'main/header.html.twig' %}
 		{% endblock header %}
 
-	{# Contenu #}
+		{# Contenu #}
+		{# ici une condition pour faire apparaitre le carousel si défini #}
+		{% if block('carousel') is defined %}
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+				</ol>
+				<div class="carousel-inner">
+					{# <div class="carousel-item active">
+						<svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveaspectratio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+						<div class="container">
+							<div class="carousel-caption text-left">
+								<h1>Example headline.</h1>
+								<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+								<p>
+									<a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveaspectratio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+						<div class="container">
+							<div class="carousel-caption">
+								<h1>Another example headline.</h1>
+								<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+								<p>
+									<a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a>
+								</p>
+							</div>
+						</div>
+					</div> #}
+					<div class="carousel-item active">
+						<img class="img-baniere" src="{{asset('assets/img/ban.jpg')}}" alt="Casemate - Disquaire de seconde main à Toulouse">
+						<div class="container">
+							<div class="carousel-caption text-ban text-right">
+								<h1>Disquaire indépendant à Toulouse</h1>
+								<p>Vente de vinyles de seconde main.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				{# arrow #}
+				<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+				{# end-arrow #}
+			</div>
+		{% endif %}
+
+
 		{% block body %}{% endblock %}
 
 		{# FOOTER COMMUN #}
@@ -65,14 +112,13 @@
 		{% endblock footer %}
 
 		{% block javascripts %}
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-		<script src="{{ asset('assets/js/gotop.js') }}" defer></script>
-		<script src="{{ asset('assets/js/commun.js') }}"></script>
-		<script src="{{ asset('assets/js/bootstrap.bundle.min.js')}}"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-		
-		<script src="https://kit.fontawesome.com/5398383d22.js" crossorigin="anonymous"></script>
+			<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+			<script src="{{ asset('assets/js/gotop.js') }}" defer></script>
+			<script src="{{ asset('assets/js/commun.js') }}"></script>
+			<script src="{{ asset('assets/js/bootstrap.bundle.min.js')}}"></script>
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+			<script src="https://kit.fontawesome.com/5398383d22.js" crossorigin="anonymous"></script>
 		{% endblock %}
 	</body>
 </html>

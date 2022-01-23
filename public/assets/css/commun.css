@@ -76,9 +76,11 @@ a {
 a:hover {
     color: var(--bleuC);
 }
-main{
+
+main {
     margin-top: 60px;
 }
+
 /* END FONTS SETTINGS */
 .alert {
     margin-bottom: 0 !important;
@@ -86,37 +88,53 @@ main{
 
 
 /* HEADER ********************************************** */
-#menu-client{
+#menu-client {
     margin-top: 15px;
     display: flex;
     flex-direction: row;
     align-content: center;
     justify-content: flex-end;
 }
-#menu-client div{
+
+#menu-client div {
     margin-left: 20px;
     margin-right: 20px;
 }
-#menu-client div a{
+
+#menu-client div a {
     display: flex;
     align-items: center;
 }
-#menu-client div i{
+
+#menu-client div i {
     font-size: 20px;
     color: var(--bleuF);
     margin-right: 10px;
 }
-.logo-header{
+
+.cart-mobile,
+.login-mobile,
+.deconnexion-mobile {
+    display: none;
+}
+
+.logo-header {
     display: flex;
-    justify-content:center ;
+    justify-content: center;
     margin-top: -20px;
 }
-.logo-header a{
+
+.logo-header a {
     display: flex;
-    justify-content:center ;
+    justify-content: center;
 }
-.logo-header a img{
+
+.logo-header a img {
     max-width: 30%;
+}
+
+header {
+    margin-bottom: 80px;
 }
 
 .header-menu {
@@ -141,7 +159,7 @@ main{
 }
 
 .header-menu.sticky {
-    top:0%;
+    top: 0%;
     padding: 5px 100px;
     background: #fff;
     z-index: 9999;
@@ -174,6 +192,34 @@ nav li.nav-item:hover a {
 
 
 
+
+
+
+/* CAROUSSEL ********************************************** */
+img.img-baniere{
+    opacity: 0.8;
+}
+#myCarousel .carousel-item .text-ban{
+    text-align: end;
+    /* width: 55%; */
+    background-color: rgba(25, 16, 11, 0.878);
+    justify-content: end;
+    padding: 20px 15% 0 0;
+    box-shadow: 0 1px 9px 0 rgba(0, 0, 0, 0.812);
+    border-radius: 5px 0 0 5px;
+}
+#myCarousel .carousel-item .carousel-caption.text-ban{
+    right: 0;
+    bottom: 5rem;
+    left: 30%;
+}
+#myCarousel .carousel-item .text-ban h1, #myCarousel .carousel-item .text-ban p{
+    color: var(--grisC);
+}
+#myCarousel .carousel-item .text-ban h1{
+    font-size: 40px;
+    font-weight: 300;
+}
 
 
 
@@ -249,6 +295,25 @@ nav li.nav-item:hover a {
     margin-bottom: 0;
 }
 
-@media screen {
-    
+@media (max-width: 992px) {
+
+    .cart,
+    .login,
+    .deconnexion {
+        display: none;
+    }
+
+    .cart-mobile,
+    .login-mobile,
+    .deconnexion-mobile {
+        display: block;
+    }
+
+    .header-menu button.navbar-toggler {
+        position: fixed;
+        top: 35px;
+        font-size: 35px;
+        left: 15px;
+    }
+
 }

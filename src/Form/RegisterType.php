@@ -36,7 +36,7 @@ class RegisterType extends AbstractType
                     ]),
                 ],
                 'attr' => [
-                    'placeholder' => 'Merci de saisir un prénom',
+                    'placeholder' => 'Merci de saisir votre prénom',
                 ]
             ])
             ->add('lastname', TextType::class, [
@@ -53,7 +53,7 @@ class RegisterType extends AbstractType
                     ]),
                 ],
                 'attr' => [
-                    'placeholder' => 'Merci de saisir un nom',
+                    'placeholder' => 'Merci de saisir votre nom',
                 ]
             ])
             // je demande à mon builder de rajouter l'input email
@@ -73,7 +73,12 @@ class RegisterType extends AbstractType
                 // je prépare un message en cas d'invalidité
                 'label' => 'Mot de passe',
                 'required' => true,
-                'first_options' => ['label' => 'Mot de passe',],
+                'first_options' => [
+                    'label' => 'Mot de passe',
+                'attr' => [
+                    'placeholder' => 'Votre mot de passe',
+                ]
+                ],
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Veuillez renseigner votre mot de passe',
@@ -87,7 +92,11 @@ class RegisterType extends AbstractType
                     
                 ],
                 // je prépare un label pour le premier input
-                'second_options' => ['label' => 'Confirmation du mot de passe'],
+                'second_options' => [
+                    'label' => 'Confirmation du mot de passe', 
+                    'attr' => [
+                        'placeholder' => 'Confirmez votre mot de passe',
+                    ]],
                 // je prépare un label pour le second input
             ]) 
 

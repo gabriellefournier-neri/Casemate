@@ -38,8 +38,15 @@
 	<header>
 		{# menu client #}
 		<div id="menu-client">
-    <div class="login"><a href=""><i class="lar la-user-circle"></i>Mon compte</a></div>
+    <div class="login"><a href="{{ path('account')}}"><i class="lar la-user-circle"></i>Mon compte</a></div>
+    <div class="login-mobile"><a href="{{ path('account')}}"><i class="lar la-user-circle"></i></a></div>
+	{% if app.user %}
+	<div class="deconnexion"><a href="{{ path('app_logout')}}"><i class="las la-sign-out-alt"></i>Deconnexion</a></div>
+	<div class="deconnexion-mobile"><a href="{{ path('app_logout')}}"><i class="las la-sign-out-alt"></i></a></div>
+	{% endif %}
+
     <div class="cart"><a href=""><i class="las la-shopping-cart"></i>Panier (0)</a></div>
+    <div class="cart-mobile"><a href=""><i class="las la-shopping-cart"></i></a></div>
     </div>
 
 
@@ -51,7 +58,7 @@
 		{# menu #}
 		<nav class="navbar navbar-expand-lg header-menu">
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
+				<span class="navbar-toggler-icon"><i class="las la-bars"></i></span>
 			</button>
 
 			<div class="collapse navigation navbar-collapse" id="navbarSupportedContent">
