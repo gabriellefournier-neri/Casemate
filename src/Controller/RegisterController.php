@@ -25,6 +25,8 @@ class RegisterController extends AbstractController
      */
     public function index(Request $request, UserPasswordHasherInterface $passwordHasher): Response
     {
+        $notif = null;
+        $notifBad = null;
 
         //on instancie un nouvel objet User
         $user = new User(); //nouvel objet utilisateur 
@@ -34,20 +36,45 @@ class RegisterController extends AbstractController
         $form->handleRequest($request);
         
         if ($form->isSubmitted() && $form->isValid()) {
-            //on recupere les données du formulaire
-            $user = $form->getData();
-            //on encode le mot de passe
-            $password = $passwordHasher->hashPassword($user, $user->getPassword());
-            //on remplace le mot de passe par le mot de passe hashé
-            $user->setPassword($password);
+
+            //on verifie que l'email renseigné n'existe pas déjà dans la base de données
+            $email = $user->getEmail();
+            $userRepository = $this->entityManager->getRepository(User::class);
+            $userExist = $userRepository->findOneBy(['email' => $email]);
+            // si il existe on affiche une notification
+            if ($userExist) {
+                $notifBad = 'Attention, cette adresse email est déjà utilisée...';
+            } else {
+                $user = $form->getData();
+                //on crypte le mot de passe
+                $password = $passwordHasher->hashPassword($user, $user->getPassword());
+                $user->setPassword($password);
+                //on enregistre l'utilisateur en base de données
+                $this->entityManager->persist($user);
+                $this->entityManager->flush();
 
 
-            $this->entityManager->persist($user);
-            $this->entityManager->flush();
+
+                //on redirige vers la page de connexion
+                return $this->redirectToRoute('account');
+            }
+            
+            // BEFORE
+            // $user = $form->getData();
+            // //on encode le mot de passe
+            // $password = $passwordHasher->hashPassword($user, $user->getPassword());
+            // //on remplace le mot de passe par le mot de passe hashé
+            // $user->setPassword($password);
+
+            // $this->entityManager->persist($user);
+            // $this->entityManager->flush();
+            // $notif = 'Votre compte a bien été créé, vous pouvez vous connecter"';
 
             //on envoie un message flash
-            $this->addFlash('success', 'Votre compte a bien été créé');
+            // $this->addFlash('success', 'Votre compte a bien été créé');
+            // END BEFORE
 
+            // TEST ICI
             // $data = $form->getData();
             // //on recupere le mot de passe
             // $password = $data->getPassword();
@@ -63,10 +90,13 @@ class RegisterController extends AbstractController
             // $em->flush();
             // //on redirige vers la page de connexion
             // return $this->redirectToRoute('login');
+            // END TEST
         }
 
         return $this->render('register/index.html.twig', [
             'form' => $form->createView(),
+            'notif' => $notif,
+            'notifBad' => $notifBad,
         ]);
     }
 }

@@ -1,16 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} Mon Compte {% endblock %}
+{% block stylesheets %}
+	<link href="{{ asset('assets/css/connexion.css') }}" type="text/css" rel="stylesheet"> 
+{% endblock %}
+
+{% block title %}
+	Mon Compte
+{% endblock %}
 
 {% block body %}
-
-<h1>Mon compte !</h1>
-<p>Bonjour {{ app.user.firstname }}</p>
-<hr>
-
-<p>-modifier mon mot de passe</p>
-<p>-ajouter mes adresse</p>
-<p>-voir mes commande</p>
+<div class="container mon-compte">
+	<div id="espace-perso">
+    <p class="hello">Bonjour<span>
+		{{ app.user.firstname }}</span></p>
+		<h2>Gérez votre espace personnel</h2>
+		<p class="lgd">Vous pouvez modifier vos informations personnelles ici</p>
+		<div id="modif-espace">
+			<p>
+				<a href="{{path('account_password')}}"><i class="las la-key"></i>Modifier mon mot de passe</a>
+			</p>
+			<p> <a href="#"> <i class="las la-home"></i>Ajouter mes adresses </a></p>
+			<p><a href="#"> <i class="las la-record-vinyl"></i>Voir mes commandes </a></p>
+		</div>
+	</div>
+    </div>
 
 
 {% endblock %}

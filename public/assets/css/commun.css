@@ -24,7 +24,7 @@ h2 {
     font-family: europa, sans-serif;
     text-transform: uppercase;
     font-size: 30px;
-    color: var(--bleuF);
+    color: var(--bleuC);
 }
 
 h2 span {
@@ -43,6 +43,11 @@ h3 {
 h3 span {
     color: var(--bleuC);
     font-weight: 500;
+}
+p.lgd{
+    font-size: 0.9rem;
+    color: var(--bleuC);
+    font-style: italic;
 }
 
 /* h4{
@@ -119,9 +124,10 @@ main {
 }
 
 .logo-header {
-    display: flex;
+    /* display: flex; */
     justify-content: center;
-    margin-top: -20px;
+    margin-top: -35px;
+    display: block;
 }
 
 .logo-header a {
@@ -130,16 +136,16 @@ main {
 }
 
 .logo-header a img {
-    max-width: 30%;
+    max-width: 20%;
 }
 
 header {
-    margin-bottom: 80px;
+    margin-bottom: 135px;
 }
 
 .header-menu {
     position: fixed;
-    top: 120px;
+    top: 150px;
     left: 0;
     width: 100%;
     height: 60px;
@@ -242,6 +248,9 @@ img.img-baniere{
 #footer {
     background-color: var(--bg);
     padding-top: 45px;
+    width: 100%;
+    /* position: fixed; */
+    bottom: 0;
 }
 
 #footer #footer-contact #contacts img {
@@ -285,7 +294,7 @@ img.img-baniere{
 
 .copyright {
     border-top: 1px solid var(--grisC);
-    padding-top: 15px;
+    padding: 10px 0;
     background-color: #f8f8f8 !important;
 }
 

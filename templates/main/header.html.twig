@@ -38,11 +38,11 @@
 	<header>
 		{# menu client #}
 		<div id="menu-client">
-    <div class="login"><a href="{{ path('account')}}"><i class="lar la-user-circle"></i>Mon compte</a></div>
-    <div class="login-mobile"><a href="{{ path('account')}}"><i class="lar la-user-circle"></i></a></div>
+    <div class="login"><a href="{{ path ('app_login')}}"><i class="lar la-user-circle"></i>Mon compte</a></div>
+    <div class="login-mobile"><a href="{{ path ('app_login')}}"><i class="lar la-user-circle"></i></a></div>
 	{% if app.user %}
-	<div class="deconnexion"><a href="{{ path('app_logout')}}"><i class="las la-sign-out-alt"></i>Deconnexion</a></div>
-	<div class="deconnexion-mobile"><a href="{{ path('app_logout')}}"><i class="las la-sign-out-alt"></i></a></div>
+	<div class="deconnexion"><a href="{{ path ('app_logout')}}"><i class="las la-sign-out-alt"></i>Deconnexion</a></div>
+	<div class="deconnexion-mobile"><a href="{{ path ('app_logout')}}"><i class="las la-sign-out-alt"></i></a></div>
 	{% endif %}
 
     <div class="cart"><a href=""><i class="las la-shopping-cart"></i>Panier (0)</a></div>
@@ -52,7 +52,7 @@
 
 		{# logo #}
 		<div class="logo-header">
-			<a href=""><img src="{{asset('assets/img/Logo.png')}}" alt="Casemate"></a>
+			<a href="{{ path ('home')}}"><img src="{{asset('assets/img/Logo.png')}}" alt="Casemate"></a>
 		</div>
 
 		{# menu #}
