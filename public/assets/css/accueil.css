@@ -1,0 +1,20 @@
+div#presentation {
+    padding-right: 35px;
+}
+
+
+h2 {
+    color: var(--bleuF) !important;
+    font-size: 30px !important;
+}
+
+p.presentation {
+    font-size: 16px !important;
+    text-align: justify;
+}
+
+.img-presentation {
+    opacity: 0.8;
+    box-shadow: 0 1px 9px 0 rgb(0 0 0 / 59%);
+    border-radius: 5px;
+}

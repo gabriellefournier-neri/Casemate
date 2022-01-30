@@ -24,18 +24,21 @@ class VinyleCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('name'),
+            SlugField::new('slug')->setTargetFieldName('name'),
+            TextField::new('name')
+                ->setHelp('Le nom de l\'album'),
             TextField::new('artiste'),
             ImageField::new('illustration')
-                ->setBasePath('uploads/')
-                ->setUploadDir('public/uploads')
+                ->setBasePath('uploads/covers')
+                ->setUploadDir('public/uploads/covers')
                 ->setFormType(FileUploadType::class)
                 ->setUploadedFileNamePattern('[randomhash].[extension]'),
             TextareaField::new('description'),
-            TextField::new('extract'),
+            TextField::new('extract')
+                ->setRequired(false)
+                ->setHelp('Lien vers l\'extrait SoundCloud, Youtube ou Spotify de l\'album'),
             MoneyField::new('price')->setCurrency('EUR'),
             AssociationField::new('Style'),
-            SlugField::new('slug')->setTargetFieldName('name'),
         ];
     }
 }
