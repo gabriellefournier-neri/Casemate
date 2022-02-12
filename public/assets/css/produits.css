@@ -1,0 +1,52 @@
+.vinyle .card{
+    background-color: transparent;
+    border: none;
+}
+
+.cover{
+    max-height: 255px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 1px 10px #a89e9e;
+
+}
+#tous-les-vinyles .cover{
+    max-height: 180px;
+}
+.vinyle h5{
+    color: var(--bleuF);
+}
+.vinyle h6{
+    color: var(--bleuC);
+    font-weight: 400;
+}
+#arrivage h2, #tous-les-vinyles h2{
+    border-bottom: 2px dotted;
+}
+#arrivage button{
+    margin: auto;
+    width: 30%;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    margin-bottom: 30px;
+    padding: 5px;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0 1px 9px 0 var(--bleuC);
+    background-color: var(--bs-gray-200);
+    color: var(--bleuF);
+    align-items: center;
+}
+#arrivage button:hover{
+    background-color: var(--bleuC);
+    color: white;
+}
+#arrivage button i{
+    margin-right: 15px;
+}
+#tous-les-vinyles .vinyles{
+    margin-top: 30px;
+}
+
+

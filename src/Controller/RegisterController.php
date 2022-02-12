@@ -45,6 +45,7 @@ class RegisterController extends AbstractController
             if ($userExist) {
                 $notifBad = 'Attention, cette adresse email est déjà utilisée...';
             } else {
+                //on récupère les données
                 $user = $form->getData();
                 //on crypte le mot de passe
                 $password = $passwordHasher->hashPassword($user, $user->getPassword());
@@ -52,8 +53,6 @@ class RegisterController extends AbstractController
                 //on enregistre l'utilisateur en base de données
                 $this->entityManager->persist($user);
                 $this->entityManager->flush();
-
-
 
                 //on redirige vers la page de connexion
                 return $this->redirectToRoute('account');

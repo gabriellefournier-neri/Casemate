@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	<link href="{{ asset('assets/css/produits.css') }}" type="text/css" rel="stylesheet">
+{% endblock %}
+
+{% block title %}Tous nos vinyles
+{% endblock %}
+
+{% block body %}
+
+	<div id="arrivage" class="container">
+		<h2>Les derniers vinyles ajoutés à la collection </h2>
+
+
+		<div class="container px-4 px-lg-5 mt-5">
+			<div
+				class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+				{# Début de ma boucle foreach FIND ALL Vinyles #}
+				{% for product in products %}
+					{# Carte Vinyle #}
+					<div class="col mb-5 vinyle">
+						<div
+							class="card h-100">
+							<!-- Vinyle image-->
+							<a href="{{ path ('show', {'slug' : product.slug } ) }}">
+								<img class="card-img-top cover" src="/uploads/covers/{{ product.illustration }}" alt="Vinyle {{ product.name }}"/>
+							</a>
+
+							<!-- Vinyle details-->
+							<div class="card-body p-4">
+								<div
+									class="text-center">
+									<!-- NOM-->
+									<h5 class="fw-bolder vinyl-name">
+										{{ product.name }}</h5>
+									<!-- ARTIST-->
+									<h6 class="artist-name">
+										{{ product.artiste}}
+									</h6>
+									<!-- PRIX-->
+									<p class="prix">
+										{{ (product.price / 100) | number_format(2, ',', ' ') }}€
+									</p>
+
+
+								</div>
+							</div>
+							<!-- Vinyle actions-->
+							<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+								<div class="text-center">
+									<a class="btn btn-outline-dark mt-auto" href="{{ path ('show', {'slug' : product.slug } ) }}">Découvrir</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+
+		<a href=" {{ path ('products') }} "><button> <i class="las la-search-plus"></i>Voir toute la collection</button></a>
+
+
+	</div>
+
+{% endblock %}

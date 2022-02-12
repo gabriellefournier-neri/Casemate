@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	<link href="{{ asset('assets/css/detailVinyle.css') }}" type="text/css" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+	{{ product.name }}
+	- Casemate Toulouse
+{% endblock %}
+
+{% block body %}
+
+	<div id="detail-vinyle" class="container">
+		<h2>Découvrir :
+			<span>
+				{{ product.artiste }}
+			</span>
+		</h2>
+
+		<div class="row card-detail">
+			<div class="col-md-4">
+				<img src="/uploads/covers/{{ product.illustration }}" alt="{{ product.name }}" class="img-fluid">
+				{# si le lien 'extract' est renseigné : afficher le lien vers l'extrait : #}
+				{% if product.extract is not null %}
+					<a href="{{ product.extract }}" target="_blank"><p class="ecouter"><i class="las la-volume-up"></i>   Ecouter un extrait</p></a>
+					</a>
+				{% endif %}
+			</div>
+			<div class="col-md-8">
+				<h3>{{ product.name }}</h3>
+				<h4 class="product-artist">{{ product.artiste }}</h4>
+				<hr>
+				{# afficher le style du produit :  #}
+				<p class="product-style"> <i class="las la-music"></i> {{ product.style }} </p>
+				<p class="product-descr">
+				<span>Le mot du disquaire : </span>
+					{{ product.description }}
+				</p>
+				<p class="product-price">
+					{{ (product.price / 100) | number_format(2, ',', ' ') }}€
+				</p>
+				
+
+				{# Bouton d'ajout au panier :  #}
+				<button class="add-item">Ajouter au panier</button>
+				
+			</div>
+		</div>
+
+
+		{# block assurance #}
+		<div class="blockreassurance_product">
+			<div>
+				<span class="item-product">
+					<img class="svg" src="{{asset('assets/img/paiement.jpg')}}" alt="Casemate - Disquaire de seconde main à Toulouse">
+					&nbsp;
+				</span>
+				<p class="block-title" style="color:#000000;">Paiement sécurisé</p>
+			</div>
+			<div>
+				<span class="item-product">
+					<img class="svg" src="{{asset('assets/img/livraison.jpg')}}" alt="Casemate - Disquaire de seconde main à Toulouse">
+					&nbsp;
+				</span>
+				<p class="block-title" style="color:#000000;">
+					Frais de port gratuits à partir de 40 €</p>
+			</div>
+			<div>
+				<span class="item-product">
+					<img class="svg" src="{{asset('assets/img/retour.jpg')}}" alt="Casemate - Disquaire de seconde main à Toulouse">
+					&nbsp;
+				</span>
+				<p class="block-title" style="color:#000000;">Retour gratuit si défectueux</p>
+			</div>
+		</div>
+
+
+	</div>
+
+{% endblock %}
