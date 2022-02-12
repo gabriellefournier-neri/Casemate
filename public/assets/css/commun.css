@@ -10,6 +10,7 @@
 /* FONTs DE BASE */
 body {
     background-color: rgba(237, 236, 236, 0.349);
+    padding-bottom: 0;
 }
 
 h1 {
@@ -140,7 +141,10 @@ main {
 }
 
 header {
-    margin-bottom: 135px;
+    margin-bottom: 70px;
+}
+.featurette-divider{
+    margin: 3rem 0;
 }
 
 .header-menu {

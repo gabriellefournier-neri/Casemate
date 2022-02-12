@@ -24,7 +24,7 @@ class SearchType extends AbstractType
                 'label' => false,
                 'required' => false,
                 'attr' => [
-                    'placeholder' => 'Merci de saisir votre recherche',
+                    'placeholder' => 'Saisissez un nom d\'artiste ou d\'album',
                     'class' => 'form-control-sm',
                 ],
                 
@@ -39,7 +39,7 @@ class SearchType extends AbstractType
             ->add('submit', SubmitType::class, [
                 'label' => 'Filtrer',
                 'attr' => [
-                    'class' => 'btn-block btn-info btn-search'
+                    'class' => ' btn-search'
                 ]
             ]);
     }

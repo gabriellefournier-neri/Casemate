@@ -49,14 +49,27 @@ class VinyleRepository extends ServiceEntityRepository
             ->getResult();
     }
 
-    //function pour afficher les 15 derniers vinyles
+    //function pour afficher les 12 derniers vinyles
     public function findLastVinyles(){
         //création d'une requete
         return $this->createQueryBuilder('vinyle')
         //on selectionne toutes les colonnes de la table vinyle
             ->orderBy('vinyle.id', 'DESC')
             //on execute la requete
-            ->setMaxResults(5)
+            ->setMaxResults(12)
+            //on retourne le resultat
+            ->getQuery()
+            ->getResult();
+    }
+
+    //function pour afficher les 8 derniers vinyles ajoutés (pour l'accueil)
+    public function findVinylesForHome(){
+        //création d'une requete
+        return $this->createQueryBuilder('vinyle')
+        //on selectionne toutes les colonnes de la table vinyle
+            ->orderBy('vinyle.id', 'DESC')
+            //on execute la requete
+            ->setMaxResults(8)
             //on retourne le resultat
             ->getQuery()
             ->getResult();

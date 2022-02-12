@@ -18,3 +18,24 @@ p.presentation {
     box-shadow: 0 1px 9px 0 rgb(0 0 0 / 59%);
     border-radius: 5px;
 }
+
+a.home-see-more {
+    margin: auto;
+    width: 20%;
+    justify-content: space-evenly;
+    text-align: center;
+    display: flex;
+    margin-bottom: 30px;
+    padding: 5px;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0 1px 7px 0 var(--bg);
+    background-color: transparent;
+    color: #78828d;
+    align-items: center;
+}
+
+a.home-see-more:hover {
+    background-color: var(--bg);
+    color: white;
+}
