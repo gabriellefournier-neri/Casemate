@@ -40,10 +40,13 @@ class ProductController extends AbstractController
         }
 
 
+        
+
+
         return $this->render('product/index.html.twig', [
             'products' => $products,
-            //on crée le formulaire 
             'recherche' => $form->createView(),
+            //on va utiliser le formulaire de recherche
         ]);
     }
 
@@ -66,7 +69,7 @@ class ProductController extends AbstractController
     }
 
     /**
-     * @Route("derniers-ajouts", name="arrivage")
+     * @Route("Arrivage", name="arrivage")
      */
     public function arrivage(){
 

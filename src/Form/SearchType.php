@@ -46,10 +46,14 @@ class SearchType extends AbstractType
 
     //function pour configurer le formulaire
     public function configureOptions(OptionsResolver $resolver)
+    //function configure qui utilise OptionResolver qu'on stock dans $resolver
     {
         $resolver->setDefaults([
+            //je défini les valeurs par défaut
             'data_class' => Search::class,
+            //je veux utiliser Search comme class de données
             'method' => 'GET',
+            //j'utilise la méthode GET 
             'csrf_protection' => false,
         ]);
     }

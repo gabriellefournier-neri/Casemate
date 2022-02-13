@@ -19,6 +19,25 @@ p.presentation {
     border-radius: 5px;
 }
 
+.vinyle .card{
+    background-color: transparent;
+    border: none;
+}
+.vinyle h5{
+    color: var(--bleuF);
+}
+.vinyle h6{
+    color: var(--bleuC);
+    font-weight: 400;
+}
+
+#dernier-vinyle .cover{
+    max-height: 255px;
+    min-height: 255px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 1px 10px #a89e9e;
+}
 a.home-see-more {
     margin: auto;
     width: 20%;
